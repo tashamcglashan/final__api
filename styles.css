@@ -256,3 +256,61 @@ button:hover {
     text-align: center;
     font-size: 18px;
 }
+
+/* MEDIA QUERY */
+@media screen and (max-width: 485px) {
+    /* Your existing CSS for screens 485px and smaller */
+    h1 {
+        font-size: 16px;
+    }
+
+    /* Hamburger icon styles */
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        justify-content: space-between;
+    }
+
+    .hamburger-icon span {
+        background-color: white;
+        height: 4px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    /* Navigation menu hidden by default on mobile */
+    .nav__link--list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust if needed */
+        left: 0;
+        background-color: #333;
+        padding: 10px 0;
+    }
+
+    /* Show menu when it has the 'active' class */
+    .nav__link--list.active {
+        display: flex;
+    }
+
+    /* Adjust links on mobile */
+    .nav__link {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav__link--anchor {
+        font-size: 18px; /* Larger text on mobile */
+        color: white; /* Ensure text is white */
+    }
+
+    /* Logo and other content adjustments as needed */
+    #logo {
+        height: 50px; /* Adjust logo size for smaller screens */
+    }
+}

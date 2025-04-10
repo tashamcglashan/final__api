@@ -7,26 +7,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/ceffe1b838.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 
-<header>
-    <nav>
-        <figure>
-            <a href=""><img src="./assets/Black and White Circle Global Tech Logo.png" id="logo" alt="logo"></a>
-        </figure>
-        <ul class="nav__link--list">
-            <li class="nav__link">
-                <a href="#" class="nav__link--anchor link__hover-effect link__hover--effect--black">Home</a>
-            </li>
-            <li class="nav__link">
-                <a href="#" class="nav__link--anchor link__hover-effect link__hover--effect--black">News</a>
-            </li>
-            <li class="nav__link">
-                <a href="#" class="nav__link--anchor link__hover-effect link__hover--effect--black">Contact</a>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <figure>
+                <a href=""><img src="./assets/Black and White Circle Global Tech Logo.png" id="logo" alt="logo"></a>
+            </figure>
+            
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Navigation Links -->
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover--effect--black">Home</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover--effect--black">News</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover--effect--black">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav__link--list');
+            menu.classList.toggle('active');  // Toggle 'active' class to show/hide menu
+        }
+    </script>
+    
 </header>
     <h1 id="text__animation">TechCrunch <span class=text-span>Headlines:</span></h1>
     <h3 id="sub__heading"><span>News</span> at Your Fingertips</h3>
