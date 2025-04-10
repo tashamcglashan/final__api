@@ -260,8 +260,11 @@ button:hover {
 /* MEDIA QUERY */
 @media screen and (max-width: 485px) {
     /* Your existing CSS for screens 485px and smaller */
-    h1 {
-        font-size: 16px;
+    h1#text__animation {
+        font-size: 24px;
+    }
+    h3#sub__heading {
+        font-size: 24px;
     }
 
     /* Hamburger icon styles */
@@ -275,7 +278,7 @@ button:hover {
     }
 
     .hamburger-icon span {
-        background-color: white;
+        background-color: black;
         height: 4px;
         width: 100%;
         border-radius: 5px;
@@ -311,6 +314,22 @@ button:hover {
 
     /* Logo and other content adjustments as needed */
     #logo {
-        height: 50px; /* Adjust logo size for smaller screens */
+        height: 70px; /* Adjust logo size for smaller screens */
+        width: 70px;
     }
+
+    #fetchHeadlinesBtn{
+        border-radius: 90px;
+        font-size: 18px;
+    }
+
+    #searchInput{
+      font-size: 18px;
+    }
+
+    .search-bar {
+        padding: 16px;
+        font-size: 16px;
+    }
+
 }
