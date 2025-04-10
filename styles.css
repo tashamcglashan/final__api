@@ -275,6 +275,7 @@ button:hover {
         width: 30px;
         height: 25px;
         justify-content: space-between;
+        z-index: 2;
     }
 
     .hamburger-icon span {
@@ -294,6 +295,7 @@ button:hover {
         left: 0;
         background-color: #333;
         padding: 10px 0;
+        z-index: 3;
     }
 
     /* Show menu when it has the 'active' class */
@@ -314,8 +316,8 @@ button:hover {
 
     /* Logo and other content adjustments as needed */
     #logo {
-        height: 70px; /* Adjust logo size for smaller screens */
-        width: 70px;
+        height: 90px; /* Adjust logo size for smaller screens */
+        width: 90px;
     }
 
     #fetchHeadlinesBtn{
@@ -325,6 +327,7 @@ button:hover {
 
     #searchInput{
       font-size: 18px;
+      width: 100%;
     }
 
     .search-bar {
@@ -332,4 +335,21 @@ button:hover {
         font-size: 16px;
     }
 
+    .nav__link--anchor {
+        font-size: 18px;
+        color: white;
+        font-weight: 800;
+    }
+
+    .link__hover-effect:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        height: 3px;
+        background-color: white;
+        width: 0;
+        transition: all 300ms ease;
+    }
+    
 }
