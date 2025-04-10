@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+header {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 62px;
+    color: #333;
+}
+
+li {
+    list-style-type: none;
+}
+
+.search-bar {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    border: 1px solid #ccc;
+    border-radius: 200px;
+    font-size: 24px;
+    outline: none;
+}
+
+.text-span {
+    background-image: url('https://cdn.prod.website-files.com/670906d278637d73dc93433d/67acd4e55920a450db6c7072_bgc-67acd4d53cfec.webp');
+    background-repeat: repeat-x;
+    background-position: 0 100%; /* This anchors it to the bottom */
+    background-size:cover;    /* Adjust if you want it to cover the word better */
+    padding-bottom: 5px;         /* Creates space for the underline */
+    font-weight: 700;
+  }
+
+  #sub__heading {
+    background-image: url(https://cdn.prod.website-files.com/670906d278637d73dc93433d/67bb376c41e4436f8f1f697c_group-1707478686-67bb375f31e7c.webp);
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: 290px;
+    background-attachment: scroll;
+  }
+  
+  #text__animation, #sub__heading {
+    /* Initial state of the text before the animation */
+
+    font-size: 5rem;
+    color: #333;
+    opacity: 0;  /* Start with text being invisible */
+    transform: translateY(-100px);  /* Start 100px above its normal position */
+    animation: dropIn 2s ease-out forwards; /* Apply animation */
+}
+
+/* Define the keyframes for the drop-down and fade-in effect */
+@keyframes dropIn {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the normal position */
+        opacity: 1;  /* Fully visible */
+    }
+}
+  
+
+/* LOADING SPINNER  */
+
+.loading {
+    font-size: 30px;
+}
+
+.loading-spinner {
+    font-size: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/*  NAV   */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+
+.nav__link--list {
+    display: flex;
+    list-style: none;
+    gap: 42px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link--anchor {
+    font-size: 18px;
+    color: #242424;
+    font-weight: 800;
+}
+
+.link__hover-effect {
+    position: relative;
+    display: inline-block;
+}
+
+
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    height: 3px;
+    background-color: #242424;
+    width: 0;
+    transition: all 300ms ease;
+}
+
+#logo {
+    height: 200px;
+    width: 200px;
+}
+
+.link__hover-effect:hover:after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+/* ARTICLE  */
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.article-card {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+}
+
+.article-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.article-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.article-description {
+    font-size: 14px;
+    color: #555;
+}
+
+.article-footer {
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+}
+
+/*  BUTTON  */
+
+button {
+    background-color: #007bff;
+    color: white;
+    font-size: 24px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 200px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 42px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* "Pressed down" effect on active (mouse click) */
+.fetchHeadlinesBtn:active {
+    transform: translateY(4px); /* Move the button down */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow to create a pressed effect */
+  }
+
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+}
