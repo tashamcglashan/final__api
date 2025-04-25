@@ -1,9 +1,17 @@
 document.getElementById("fetchHeadlinesBtn").addEventListener("click", fetchHeadlines);
 document.getElementById("searchInput").addEventListener("input", searchArticles);
 
-const apiKey = "8cbd30ff807c41b2a5f4e672a7344dea";
+const apiKey = "bb3b278050915cafae3d80d3f2698fd0";
 let currentPage = 1;
 let totalResults = 0;
+
+document.getElementById("fetchHeadlinesBtn").addEventListener("click", () => {
+    fetchHeadlines();
+  });
+
+  document.getElementById("searchInput").addEventListener("input", () => {
+    fetchHeadlines(1, document.getElementById("searchInput").value.trim());
+  });
 
 async function fetchHeadlines(page = 1, query = '') {
     const loadingMessage = document.getElementById("loadingMessage");
@@ -17,17 +25,18 @@ async function fetchHeadlines(page = 1, query = '') {
     errorContainer.innerHTML = "";
     paginationContainer.innerHTML = "";
 
-    const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&page=${page}&pageSize=5&apiKey=${apiKey}&q=${query}`;
+    const url = `https://gnews.io/api/v4/search?q=${query || 'technology'}&token=${apiKey}&lang=en&max=5&page=${page}`;
+
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 
-        if (data.status !== "ok") {
+        if (!data.articles) {
             throw new Error("Failed to fetch news.");
         }
 
-        totalResults = data.totalResults;
+        totalResults = data.totalArticles;
 
         // Hide loading message
         loadingMessage.innerHTML = '';
